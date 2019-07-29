@@ -1,4 +1,5 @@
 'use strict';
+
 const fileType = require('file-type');
 const getStream = require('get-stream');
 const pify = require('pify');
@@ -49,9 +50,9 @@ const extractEntry = (entry, zip) => {
 
 			return file;
 		})
-		.catch(err => {
+		.catch(error => {
 			zip.close();
-			throw err;
+			throw error;
 		});
 };
 
